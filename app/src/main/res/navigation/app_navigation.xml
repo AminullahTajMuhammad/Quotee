@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/quotes_list_frag">
+
+    <fragment
+        android:id="@+id/quotes_list_frag"
+        android:name="com.github.amin.quotee.ui.quotes_list.QuotesListFragment"
+        android:label="fragment_quotes_list"
+        tools:layout="@layout/fragment_quotes_list" >
+        <action
+            android:id="@+id/action_quotes_list_frag_to_quotes_details_frag"
+            app:destination="@id/quotes_details_frag" />
+        <action
+            android:id="@+id/action_quotes_list_frag_to_random_quotes_frag"
+            app:destination="@id/random_quotes_frag" />
+    </fragment>
+    <fragment
+        android:id="@+id/quotes_details_frag"
+        android:name="com.github.amin.quotee.ui.quote_details.QuotesDetailsFragment"
+        android:label="fragment_quotes_details"
+        tools:layout="@layout/fragment_quotes_details" />
+    <fragment
+        android:id="@+id/random_quotes_frag"
+        android:name="com.github.amin.quotee.ui.random.RandomQuotesFragment"
+        android:label="fragment_random_quotes"
+        tools:layout="@layout/fragment_random_quotes" >
+        <action
+            android:id="@+id/action_random_quotes_frag_to_quotes_details_frag"
+            app:destination="@id/quotes_details_frag" />
+    </fragment>
+</navigation>
