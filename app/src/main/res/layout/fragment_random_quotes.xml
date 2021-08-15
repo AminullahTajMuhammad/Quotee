@@ -3,16 +3,113 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.random.RandomQuotesFragment">
+    tools:context=".ui.quote_details.QuotesDetailsFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbarQuotesDetails"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Random Quotes Fragment"
+        android:background="@color/surface"
+        app:titleTextColor="@color/black"
+        app:navigationIcon="@drawable/ic_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Random Quote"
+                android:textSize="17sp"
+                android:textColor="@color/black"
+                app:layout_constraintHorizontal_bias="0.33"
+                android:fontFamily="@font/circular_std_black"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <TextView
+        android:id="@+id/tvQuote"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintVertical_bias="0.35"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/kalam_bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarQuotesDetails"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="lorem ipsum test message ipsum test ipsum test    lorem ipsum test message ipsum lorem ipsum test message ipsum lorem ipsum test message ipsum lorem ipsum test message ipsum lorem ipsum test message ipsum" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvQuote">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvBySign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="~"
+            android:fontFamily="@font/kalam_bold"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvQuote"
+            app:layout_constraintEnd_toStartOf="@+id/tvQuoteBy"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvQuoteBy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aminullah Taj"
+            android:textColor="@color/black"
+            android:fontFamily="@font/kalam_light"
+            android:textSize="16sp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvQuote"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reload"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/black"
+        app:iconTint="@color/white"
+        app:icon="@drawable/ic_reload"
+        android:layout_margin="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

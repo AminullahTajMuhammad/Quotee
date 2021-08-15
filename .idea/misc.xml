@@ -3,10 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_back.xml" value="0.2569230769230769" />
         <entry key="app/src/main/res/drawable/ic_dark.xml" value="0.2569230769230769" />
         <entry key="app/src/main/res/drawable/ic_dark_mode.xml" value="0.2569230769230769" />
+        <entry key="app/src/main/res/drawable/ic_reload.xml" value="0.2609375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_quotes_details.xml" value="0.24479166666666666" />
+        <entry key="app/src/main/res/layout/fragment_quotes_details.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_quotes_list.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_random_quotes.xml" value="0.24479166666666666" />
         <entry key="app/src/main/res/layout/list_item_quotes.xml" value="0.165" />
