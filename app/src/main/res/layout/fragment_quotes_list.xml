@@ -50,6 +50,38 @@
 
     </com.google.android.material.appbar.MaterialToolbar>
 
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarQuotes"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/list_item_shimmer_effect"/>
+            <include layout="@layout/list_item_shimmer_effect"/>
+            <include layout="@layout/list_item_shimmer_effect"/>
+            <include layout="@layout/list_item_shimmer_effect"/>
+            <include layout="@layout/list_item_shimmer_effect"/>
+            <include layout="@layout/list_item_shimmer_effect"/>
+            <include layout="@layout/list_item_shimmer_effect"/>
+            <include layout="@layout/list_item_shimmer_effect"/>
+            <include layout="@layout/list_item_shimmer_effect"/>
+            <include layout="@layout/list_item_shimmer_effect"/>
+            <include layout="@layout/list_item_shimmer_effect"/>
+            <include layout="@layout/list_item_shimmer_effect"/>
+            <include layout="@layout/list_item_shimmer_effect"/>
+            <include layout="@layout/list_item_shimmer_effect"/>
+            <include layout="@layout/list_item_shimmer_effect"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerQuotes"
         android:layout_width="match_parent"

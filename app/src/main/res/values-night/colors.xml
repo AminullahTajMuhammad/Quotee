@@ -5,4 +5,5 @@
     <color name="white">#FF000000</color>
     <color name="surface">#1A191E</color>
     <color name="grey">#979797</color>
+    <color name="light_grey">#1A191E</color>
 </resources>

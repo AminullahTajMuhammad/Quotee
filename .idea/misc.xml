@@ -12,6 +12,7 @@
         <entry key="app/src/main/res/layout/fragment_quotes_list.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_random_quotes.xml" value="0.24479166666666666" />
         <entry key="app/src/main/res/layout/list_item_quotes.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/list_item_shimmer_effect.xml" value="0.24583333333333332" />
       </map>
     </option>
   </component>

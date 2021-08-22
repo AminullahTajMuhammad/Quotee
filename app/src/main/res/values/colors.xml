@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
-<!--    <color name="background">#f9f9f9</color>-->
     <color name="background">#EEEEEE</color>
     <color name="white">#FFFFFFFF</color>
-<!--    <color name="surface">#EEEEEE</color>-->
     <color name="surface">#FFFFFF</color>
     <color name="grey">#979797</color>
+    <color name="light_grey">#DDDDDD</color>
 </resources>
