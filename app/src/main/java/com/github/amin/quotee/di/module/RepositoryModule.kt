@@ -7,8 +7,10 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import kotlinx.coroutines.DelicateCoroutinesApi
 import javax.inject.Singleton
 
+@DelicateCoroutinesApi
 @Module
 @InstallIn(SingletonComponent::class)
 class RepositoryModule {

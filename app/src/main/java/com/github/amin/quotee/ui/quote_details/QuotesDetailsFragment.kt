@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.github.amin.quotee.databinding.FragmentQuotesDetailsBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class QuotesDetailsFragment : Fragment() {
 
     private lateinit var binding: FragmentQuotesDetailsBinding

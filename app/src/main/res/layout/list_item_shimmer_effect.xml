@@ -1,8 +1,11 @@
-<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_margin="10dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="10dp"
     android:background="@color/light_grey"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -23,7 +26,7 @@
         android:id="@+id/tvBySign"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="~"
+        tools:text=""
         android:fontFamily="@font/kalam_bold"
         android:textColor="@color/black"
         android:textSize="16sp"
@@ -38,7 +41,7 @@
         android:id="@+id/tvQuoteBy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Aminullah Taj"
+        tools:text="Aminullah Taj"
         android:textColor="@color/black"
         android:fontFamily="@font/kalam_bold"
         android:textSize="16sp"

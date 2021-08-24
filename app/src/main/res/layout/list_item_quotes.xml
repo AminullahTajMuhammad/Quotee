@@ -4,20 +4,18 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="0dp"
-    android:layout_marginStart="5dp"
-    android:layout_marginEnd="5dp"
-    android:layout_marginTop="5dp"
-    android:layout_marginBottom="5dp"
+    android:layout_marginTop="10dp"
+    android:paddingBottom="10dp"
     android:backgroundTint="@color/surface">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp">
+        android:layout_margin="15dp">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvQuote"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/kalam_regular"
             android:textSize="18sp"

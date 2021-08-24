@@ -5,7 +5,9 @@ import android.os.Bundle
 import androidx.navigation.NavController
 import com.github.amin.quotee.R
 import com.github.amin.quotee.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 

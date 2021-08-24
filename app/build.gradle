@@ -2,6 +2,8 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -34,12 +36,11 @@ android {
     buildFeatures {
         viewBinding = true
     }
-
 }
 
 dependencies {
 
-    def hilt_version = '2.33-beta'
+    def hilt_version = '2.38.1'
     def nav_version = "2.3.5"
 
     implementation 'androidx.core:core-ktx:1.6.0'
@@ -52,10 +53,16 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     // Hilt for Dependency Injection
+//    implementation 'com.google.dagger:hilt-android:2.38.1'
+//    implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
+//    kapt 'com.google.dagger:hilt-compiler:2.38.1'
+//    annotationProcessor 'com.google.dagger:hilt-compiler:2.38.1'
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-compiler:$hilt_version"
     implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
 
     // Coroutine
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0"
@@ -82,4 +89,8 @@ dependencies {
 
     //Shimmer
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
+}
+
+kapt {
+    correctErrorTypes true
 }
