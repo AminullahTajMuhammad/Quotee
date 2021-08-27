@@ -1,5 +1,6 @@
 package com.github.amin.quotee.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import com.github.amin.quotee.databinding.ListItemQuotesBinding
 class AllQuotesAdapter(var context: Context): RecyclerView.Adapter<AllQuotesAdapter.Holder>() {
 
     private val quotes = arrayListOf<QuotesResponse>()
+
     fun updateData(list: ArrayList<QuotesResponse>) {
         quotes.clear()
         quotes.addAll(list)
@@ -26,7 +28,16 @@ class AllQuotesAdapter(var context: Context): RecyclerView.Adapter<AllQuotesAdap
         with(holder) {
             binding.tvQuote.text = quote.content
             binding.tvQuoteBy.text = quote.author
+
+            itemView.setOnClickListener {
+                onItemClick?.invoke(quote)
+            }
         }
+    }
+
+    private var onItemClick: ((QuotesResponse) -> Unit)? = null
+    fun onItemClick(listener: (QuotesResponse) -> Unit) {
+        onItemClick = listener
     }
 
     override fun getItemCount(): Int = quotes.size

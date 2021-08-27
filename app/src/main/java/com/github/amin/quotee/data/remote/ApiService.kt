@@ -12,8 +12,8 @@ interface ApiService {
     suspend fun getAllQuotes(): List<QuotesResponse>
 
     @GET("quotes/random")
-    fun getRandomQuote(): Call<QuotesResponse>
+    suspend fun getRandomQuote(): QuotesResponse
 
     @GET("quotes/get/{id}")
-    fun getQuoteDetail(@Path("id") id: String): Call<QuotesResponse>
+    suspend fun getQuoteDetail(@Path("id") id: String): QuotesResponse
 }

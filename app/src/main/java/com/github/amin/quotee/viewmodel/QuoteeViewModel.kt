@@ -3,6 +3,7 @@ package com.github.amin.quotee.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.github.amin.quotee.data.remote.Resource
+import com.github.amin.quotee.data.remote.Status
 import com.github.amin.quotee.data.remote.responses.QuotesResponse
 import com.github.amin.quotee.data.repository.AppRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -22,13 +23,56 @@ class QuoteeViewModel @Inject constructor(
 
     fun getAllQuotes() {
         viewModelScope.launch {
-            appRepository.getAllQuotes()
-                .catch {
-                    _allQuotes.value = (Resource.error(it.message.toString(), null))
+            appRepository.getAllQuotes().collect {
+                when(it.status) {
+                    Status.EMPTY -> {
+                        _allQuotes.value = Resource.empty()
+                    }
+                    Status.SUCCESS -> {
+                        _allQuotes.value = Resource.success(it.data as ArrayList)
+                    }
+                    Status.ERROR -> {
+                        _allQuotes.value = Resource.error(it.message.toString(), null)
+                    }
                 }
-                .collect {
-                    _allQuotes.value = Resource.success(it as ArrayList<QuotesResponse>)
+            }
+        }
+    }
+
+    private val _quoteDetail = MutableStateFlow<Resource<QuotesResponse>>(Resource.loading(null))
+    val quoteDetail get() = _quoteDetail
+
+    fun getQuoteDetails(id: String) {
+        viewModelScope.launch {
+            appRepository.getQuoteDetails(id).collect {
+                when(it.status) {
+                    Status.SUCCESS -> {
+                        _quoteDetail.value = Resource.success(it.data)
+                    }
+                    Status.ERROR -> {
+                        _quoteDetail.value = Resource.error(it.message.toString(), null)
+                    }
                 }
+            }
+        }
+    }
+
+
+    private val _randomQuote = MutableStateFlow<Resource<QuotesResponse>>(Resource.loading(null))
+    val randomQuote get() = _randomQuote
+
+    fun getRandomQuote() {
+        viewModelScope.launch {
+            appRepository.getRandomQuote().collect {
+                when(it.status) {
+                    Status.SUCCESS -> {
+                        _randomQuote.value = Resource.success(it.data)
+                    }
+                    Status.ERROR -> {
+                        _randomQuote.value = Resource.error(it.message.toString(), null)
+                    }
+                }
+            }
         }
     }
 }

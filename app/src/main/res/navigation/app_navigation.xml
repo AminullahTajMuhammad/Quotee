@@ -21,14 +21,12 @@
         android:id="@+id/quotes_details_frag"
         android:name="com.github.amin.quotee.ui.quote_details.QuotesDetailsFragment"
         android:label="fragment_quotes_details"
-        tools:layout="@layout/fragment_quotes_details" />
+        tools:layout="@layout/fragment_quotes_details" >
+    </fragment>
     <fragment
         android:id="@+id/random_quotes_frag"
         android:name="com.github.amin.quotee.ui.random.RandomQuotesFragment"
         android:label="fragment_random_quotes"
         tools:layout="@layout/fragment_random_quotes" >
-        <action
-            android:id="@+id/action_random_quotes_frag_to_quotes_details_frag"
-            app:destination="@id/quotes_details_frag" />
     </fragment>
 </navigation>

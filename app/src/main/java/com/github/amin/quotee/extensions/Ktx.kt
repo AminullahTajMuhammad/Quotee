@@ -46,3 +46,8 @@ val Context.isInternetConnected: Boolean
             }
         }
     }
+
+
+fun View.click(it: (View) -> Unit) {
+    this.setOnClickListener(it)
+}

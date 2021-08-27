@@ -8,11 +8,12 @@
     tools:context=".ui.quote_details.QuotesDetailsFragment">
 
     <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/toolbarQuotesDetails"
+        android:id="@+id/toolbarRandomQuotes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/surface"
         app:titleTextColor="@color/black"
+        android:elevation="5dp"
         app:navigationIcon="@drawable/ic_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,66 +40,97 @@
 
     </com.google.android.material.appbar.MaterialToolbar>
 
-    <TextView
-        android:id="@+id/tvQuote"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardQuote"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        app:layout_constraintVertical_bias="0.35"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:textAlignment="center"
-        android:fontFamily="@font/kalam_bold"
+        app:cardBackgroundColor="@color/surface"
+        android:layout_margin="30dp"
+        app:cardCornerRadius="5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarQuotesDetails"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:text="lorem ipsum test message ipsum test ipsum test    lorem ipsum test message ipsum lorem ipsum test message ipsum lorem ipsum test message ipsum lorem ipsum test message ipsum lorem ipsum test message ipsum" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvQuote">
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvBySign"
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="~"
-            android:fontFamily="@font/kalam_bold"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="5dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvQuote"
-            app:layout_constraintEnd_toStartOf="@+id/tvQuoteBy"
-            app:layout_constraintBottom_toBottomOf="parent"
-            />
+            android:orientation="vertical">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvQuoteBy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Aminullah Taj"
-            android:textColor="@color/black"
-            android:fontFamily="@font/kalam_light"
-            android:textSize="16sp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="10dp"
-            app:layout_constraintTop_toBottomOf="@+id/tvQuote"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            />
+            <TextView
+                android:id="@+id/tvQuote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="@font/kalam_bold"
+                android:text="lorem ipsum test message ipsum test ipsum test lorem ipsum test message ipsum lorem ipsum test message ipsum lorem ipsum test message ipsum lorem ipsum test message ipsum lorem ipsum test message ipsum"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="23sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintVertical_bias="0.35" />
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linAuthor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal"
+                android:layout_below="@+id/tvQuote"
+                android:layout_marginBottom="20dp"
+                android:gravity="center_horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvBySign"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="~"
+                    android:fontFamily="@font/kalam_bold"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="5dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvQuote"
+                    app:layout_constraintEnd_toStartOf="@+id/tvQuoteBy"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvQuoteBy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Aminullah Taj"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/kalam_regular"
+                    android:textSize="18sp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/tvQuote"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:indeterminateTint="@color/black" />
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fabReload"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Reload"

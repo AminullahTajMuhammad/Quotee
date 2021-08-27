@@ -1,14 +1,13 @@
 package com.github.amin.quotee.data.repository
 
+import android.util.Log
 import com.github.amin.quotee.data.remote.ApiService
-import com.github.amin.quotee.data.remote.RetrofitCallback
+import com.github.amin.quotee.data.remote.Resource
 import com.github.amin.quotee.data.remote.responses.QuotesResponse
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.DelicateCoroutinesApi
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.launch
+import java.io.IOException
 import javax.inject.Inject
 
 @DelicateCoroutinesApi
@@ -16,51 +15,53 @@ class AppRepositoryImpl @Inject constructor(
     private val apiService: ApiService
 ): AppRepository {
 
-    override suspend fun getAllQuotes(): Flow<List<QuotesResponse>> = flow { emit(apiService.getAllQuotes()) }
-
-    override suspend fun getRandomQuote(
-        success: (data: QuotesResponse) -> Unit,
-        failure: (message: String) -> Unit
-    ) {
-        apiService.getRandomQuote().enqueue(RetrofitCallback {
-            onSuccess { call, response ->
-                if(response != null && response.isSuccessful && response.code() == 200) {
-                    val result = response.body()
-                    result?.let {
-                        success.invoke(it)
-                    }
+    override suspend fun getAllQuotes(): Flow<Resource<List<QuotesResponse>>> {
+        return flow {
+            try {
+                val quotes = apiService.getAllQuotes()
+                if(quotes.isEmpty()) {
+                    emit(Resource.empty<List<QuotesResponse>>())
                 } else {
-                    failure.invoke("Something went wrong")
+                    emit(Resource.success(quotes))
+                }
+            } catch (e: Exception) {
+                if(e is IOException) {
+                    emit(Resource.error<List<QuotesResponse>>("No Internet Connection", null))
+                } else {
+                    emit(Resource.error<List<QuotesResponse>>("Something went wrong..", null))
                 }
             }
-
-            onFailure { call, t ->
-                failure.invoke("Failed to get data...")
-            }
-        })
+        }
     }
 
-    override suspend fun getQuoteDetails(
-        id: String,
-        success: (data: QuotesResponse) -> Unit,
-        failure: (message: String) -> Unit
-    ) {
-        apiService.getQuoteDetail(id).enqueue(RetrofitCallback {
-            onSuccess { call, response ->
-                if(response != null && response.isSuccessful && response.code() == 200) {
-                    val result = response.body()
-                    result?.let {
-                        success.invoke(it)
-                    }
+    override suspend fun getRandomQuote(): Flow<Resource<QuotesResponse>> {
+        return flow {
+            try {
+                emit(Resource.success(apiService.getRandomQuote()))
+            } catch (e: Exception) {
+                if(e is IOException) {
+                    emit(Resource.error<QuotesResponse>("No Internet Connection", null))
                 } else {
-                    failure.invoke("Something went wrong")
+                    emit(Resource.error<QuotesResponse>("Something went wrong..", null))
                 }
             }
-
-            onFailure { call, t ->
-                failure.invoke("Failed to get data...")
-            }
-        })
+        }
     }
+
+    override suspend fun getQuoteDetails(id: String): Flow<Resource<QuotesResponse>> {
+        return flow {
+            try {
+                emit(Resource.success(apiService.getQuoteDetail(id)))
+            } catch (e: Exception) {
+                if(e is IOException) {
+                    emit(Resource.error<QuotesResponse>("No Internet Connection", null))
+                } else {
+                    Log.d("ERROR", e.localizedMessage.toString())
+                    emit(Resource.error<QuotesResponse>("Something went wrong..", null))
+                }
+            }
+        }
+    }
+
 
 }
