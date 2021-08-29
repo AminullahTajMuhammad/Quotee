@@ -6,14 +6,14 @@ A Simple and Minimal Quotes Android Application to demonstrate the <b>Modern And
 # ScreenShots 📷  
 <div align="center">
   <h3> Light Version </h3>
-  <img src="https://github.com/wajahatkarim3/Imagine/blob/main/screenshots/PopularPhotosDay.png" width="230px"/> 
-  <img src="https://github.com/wajahatkarim3/Imagine/blob/main/screenshots/PhotoDetailsDay.png" width="230px" /> 
-  <img src="https://github.com/wajahatkarim3/Imagine/blob/main/screenshots/SearchResultsDay.png" width="230px" /><br>
+  <img src="https://github.com/AminullahTajMuhammad/Quotee/blob/master/assets/quotes_listing_light.png" width="230px"/> 
+  <img src="https://github.com/AminullahTajMuhammad/Quotee/blob/master/assets/quotes_details_light.png" width="230px" /> 
+  <img src="https://github.com/AminullahTajMuhammad/Quotee/blob/master/assets/random_quote_light.png" width="230px" /><br>
     
   <h3> Dark Version </h3>
-  <img src="https://github.com/wajahatkarim3/Imagine/blob/main/screenshots/PopularPhotosDay.png" width="230px"/> 
-  <img src="https://github.com/wajahatkarim3/Imagine/blob/main/screenshots/PhotoDetailsDay.png" width="230px" /> 
-  <img src="https://github.com/wajahatkarim3/Imagine/blob/main/screenshots/SearchResultsDay.png" width="230px" /><br>
+  <img src="https://github.com/AminullahTajMuhammad/Quotee/blob/master/assets/quotes_listing_dark.png" width="230px"/> 
+  <img src="https://github.com/AminullahTajMuhammad/Quotee/blob/master/assets/quote_detail_dark.png" width="230px" /> 
+  <img src="https://github.com/AminullahTajMuhammad/Quotee/blob/master/assets/random_quote_dark.png" width="230px" /><br>
 </div>
 
 # Download Application 👇  
