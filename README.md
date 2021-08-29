@@ -42,6 +42,7 @@ A Simple and Minimal Quotes Android Application to demonstrate the <b>Modern And
   - [Hilt](https://dagger.dev/hilt) - Easier way to incorporate Dagger DI into Android apps.
 - [Retrofit](https://square.github.io/retrofit/) - A type-safe HTTP client for Android and Java.
 - [Material Components for Android](https://github.com/material-components/material-components-android) - Modular and customizable Material Design UI components for Android.
+- [Shimmer](https://facebook.github.io/shimmer-android/) - Shimmer is an Android library that provides an easy way to add a shimmer effect to any view in your Android app.
 - [Gradle Kotlin DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html) - For writing Gradle build scripts using Kotlin.
 
 
