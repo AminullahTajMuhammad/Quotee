@@ -1,6 +1,7 @@
 # Quotee Android 📑
 <samp>
-A Simple and Minimal Quotes Android Application to demonstrate the <b>Modern Android Development</b> tools.
+A Simple and Minimal Quotes Android Application to demonstrate the <b>Modern Android Development</b> tools. Developed with ❤️ by 
+  <a href = "https://aminullahtaj.com">Aminullah Taj Muhammad</a>
 </samp>
   
 # ScreenShots 📷  
