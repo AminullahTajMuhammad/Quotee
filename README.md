@@ -17,7 +17,7 @@ A Simple and Minimal Quotes Android Application to demonstrate the <b>Modern And
 </div>
 
 # Download Application 👇  
-  Download Latest APK file From [Here]()
+  Download Latest APK file From [Here](https://github.com/AminullahTajMuhammad/Quotee/blob/master/apk/Quotee.apk)
 
 ## Built With 🛠
 
