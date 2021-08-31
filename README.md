@@ -62,7 +62,7 @@ This app uses [MVVM](https://developer.android.com/topic/architecture) Architect
 Aminullah Taj Muhammad
 ```
 - Website (http://aminullahtaj.com)
-- Twitter (http://twitter.com/AminullahgTajM)
+- Twitter (http://twitter.com/AminullahTajM)
 - Medium (https://medium.com/@aminullahtaj)
 
 #  How to Contribute 👍
